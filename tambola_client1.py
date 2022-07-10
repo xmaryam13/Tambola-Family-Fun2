@@ -62,7 +62,7 @@ def askPlayerName():
     
     bg = ImageTk.PhotoImage(file = 'C:/Users/MBajw/OneDrive/Documents/Coding.background_project.png')
     
-    canvas1 = Canvas(nameWindow, width = 500, height= 500)
+    canvas1 = Canvas(nameWindow, widht = 500, height= 500)
     canvas1.pack(fill='both', expand= True)  
     
     canvas1.create_image(0,0, image= bg, anchor='nw')
@@ -77,11 +77,45 @@ def askPlayerName():
     nameWindow.resizable(True, True)
     nameWindow.mainloop()
     
+
+
+def gameWindow():
+    global gameWindow
+    global canvas2
+    global screen_width
+    global screen_height
+
+
+    gameWindow = Tk()
+    gameWindow.title("Tambola Family Fun")
+    gameWindow.attributes('-fullscreen',True)
     
-    
-gameWindow = None
 ticketGrid = None
 boxButton = None
+
+canvas2 = None    
+
+flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text= 'Waiting for others to join...',font = ('Chalkboard SE',30), fill = '#3e2723')
+
+def receivedMsg():
+    global SERVER
+    global displayNumberList 
+    global flashNumberLabel
+    global canvas2
+    global gameOver
+    
+    numbers = [ str(i) for i in range(1,91)]
+    
+    while True:
+        chunk = SERVER.recv(2048).decode()
+        if (chunk in numbers and flashNumberLabel and not gameOver):
+            displayNumberList.append(int(chunk))
+            canvas2.itemconfigure(flashNumberLabel, text = chunk, font = ('Chalkboard SE',60))
+        elif ('Wins the game.' in chunk):
+            gameOver = True
+            canvas2.itemconfigure(flashNumberLabel, text = chunk, font = ('Chalkboard SE',40))
+            
+    
 
 
 def createTicket():
