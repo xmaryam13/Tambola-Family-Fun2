@@ -90,10 +90,16 @@ def gameWindow():
     gameWindow.title("Tambola Family Fun")
     gameWindow.attributes('-fullscreen',True)
     
+    screen_width = gameWindow.winfo_screenwidth()
+    screen_height = gameWindow.winfo_screenheight()
+    bg = ImageTk.PhotoImage(file = "C:/Users/MBajw/Downloads/background_project.png")
+    canvas2 = Canvas( gameWindow, width = 500,height = 500)
+    canvas2.pack(fill = "both", expand = True)
+    
 ticketGrid = None
-boxButton = None
-
-canvas2 = None    
+boxB
+canvas2 = None   utton = None
+ 
 
 flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text= 'Waiting for others to join...',font = ('Chalkboard SE',30), fill = '#3e2723')
 
