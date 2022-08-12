@@ -96,9 +96,10 @@ def gameWindow():
     canvas2 = Canvas( gameWindow, width = 500,height = 500)
     canvas2.pack(fill = "both", expand = True)
     
-ticketGrid = None
-boxB
-canvas2 = None   utton = None
+ticketGrid = [] 
+currentNumberList = [] 
+flashNumberList = [] 
+flashNumberLabel = None
  
 
 flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text= 'Waiting for others to join...',font = ('Chalkboard SE',30), fill = '#3e2723')
