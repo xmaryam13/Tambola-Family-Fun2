@@ -7,6 +7,9 @@ PORT = 6000
 
 CLIENTS = {}
 
+flashNumberList =[ i for i in range(1, 91)] 
+playersJoined = False
+
 def setup():
     print('\n\t\t\t\t\t*** Welcome to the Tambola Game***\n')
     
