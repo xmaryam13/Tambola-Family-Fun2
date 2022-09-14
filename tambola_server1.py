@@ -85,10 +85,7 @@ def acceptConnections():
 
         print(f"Connection established with {player_name} : {addr}")
 
-        thread1 = Thread(target = recvMessage, args=(player_socket,))
-        thread1.start()
-
-
+ 
 
 def setup():
     print("\n\t\t\t\t\t*** Welcome To Tambola Game ***\n")
