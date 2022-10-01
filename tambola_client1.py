@@ -2,6 +2,8 @@ import socket
 from tkinter import *
 from threading import Thread
 import random
+import platform
+import tkinter as tk
 from PIL import ImageTk, Image
 
 screen_width = None
@@ -14,7 +16,7 @@ nameWindow = None
 nameEntry = None
 canvas1 = None
 button = None
-
+Canvas2 = None
 ticketGrid = [] 
 currentNumberList = [] 
 flashNumberList = [] 
@@ -97,14 +99,15 @@ def gameWindow():
     bg = ImageTk.PhotoImage(file = "C:/Users/MBajw/Downloads/background_project.png")
     canvas2 = Canvas( gameWindow, width = 500,height = 500)
     canvas2.pack(fill = "both", expand = True)
+    canvas2.create_image( 0, 0, image = bg, anchor = "nw")
+    createTicket() 
+    placeNumbers() 
+    flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text= 'Waiting for others to join...',font = ('Chalkboard SE',30), fill = '#3e2723') 
+    gameWindow.resizable(True, True) 
+    gameWindow.mainloop()
     
 ticketGrid = [] 
 currentNumberList = [] 
-flashNumberList = [] 
-flashNumberLabel = None
- 
-
-flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text= 'Waiting for others to join...',font = ('Chalkboard SE',30), fill = '#3e2723')
 
 def receivedMsg():
     global SERVER
