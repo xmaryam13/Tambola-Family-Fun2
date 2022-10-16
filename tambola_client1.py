@@ -170,7 +170,6 @@ def createTicket():
         xPos = 105
         yPos += 82
 
-currentNumberList = None
 
 def placeNumbers():
     global ticketGrid
