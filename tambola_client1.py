@@ -24,19 +24,6 @@ flashNumberLabel = None
 
 def receivedMsg():
     pass
-
-
-def setup():
-    global SERVER
-    global PORT
-    global IP_ADDRESS
-
-    
-    SERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    SERVER.connect((IP_ADDRESS,PORT))
-    
-
-    
     
 def saveName():
     global SERVER
@@ -208,3 +195,16 @@ def placeNumbers():
             counter +=1
             
 gameWindow.mainloop()
+
+
+def setup():
+    global SERVER
+    global PORT
+    global IP_ADDRESS
+
+    
+    SERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    SERVER.connect((IP_ADDRESS,PORT))
+    askPlayerName()
+    
+    setup()
