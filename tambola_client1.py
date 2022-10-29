@@ -75,6 +75,11 @@ def gameWindow():
     global canvas2
     global screen_width
     global screen_height
+    global dice
+    global flashNumberLabel
+    global winingMessage
+    global resetMessage
+    
 
 
     gameWindow = Tk()
@@ -92,9 +97,7 @@ def gameWindow():
     flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text= 'Waiting for others to join...',font = ('Chalkboard SE',30), fill = '#3e2723') 
     gameWindow.resizable(True, True) 
     gameWindow.mainloop()
-    
-ticketGrid = [] 
-currentNumberList = [] 
+
 
 def receivedMsg():
     global SERVER
