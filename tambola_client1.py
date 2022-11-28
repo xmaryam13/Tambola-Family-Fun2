@@ -68,7 +68,7 @@ def askPlayerName():
     nameWindow.resizable(True, True)
     nameWindow.mainloop()
     
-
+gameWindow = None
 
 def gameWindow():
     global gameWindow
