@@ -36,7 +36,7 @@ def saveName():
     nameWindow.destroy()
     
     SERVER.send(playerName.encode())
-    
+gameWindow()
 
 def askPlayerName():
     global playerName 
@@ -68,8 +68,6 @@ def askPlayerName():
     nameWindow.resizable(True, True)
     nameWindow.mainloop()
     
-gameWindow = None
-
 def gameWindow():
     global gameWindow
     global canvas2
@@ -210,4 +208,4 @@ def setup():
     SERVER.connect((IP_ADDRESS,PORT))
     askPlayerName()
     
-    setup()
+setup()
