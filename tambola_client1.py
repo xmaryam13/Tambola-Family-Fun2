@@ -90,6 +90,7 @@ def gameWindow():
     canvas2 = Canvas( gameWindow, width = 500,height = 500)
     canvas2.pack(fill = "both", expand = True)
     canvas2.create_image( 0, 0, image = bg, anchor = "nw")
+    canvas2.create_text( screen_width/4.5,50, text = "Tambola Family Fun", font=("Chalkboard SE",50), fill="#3e2723")
     createTicket() 
     placeNumbers() 
     flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text= 'Waiting for others to join...',font = ('Chalkboard SE',30), fill = '#3e2723') 
