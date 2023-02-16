@@ -36,7 +36,7 @@ def saveName():
     nameWindow.destroy()
     
     SERVER.send(playerName.encode())
-gameWindow()
+    gameWindow()
 
 def askPlayerName():
     global playerName 
