@@ -53,7 +53,7 @@ def askPlayerName():
     
     bg = ImageTk.PhotoImage(file = 'C:/Users/MBajw/OneDrive/Documents/Coding.background_project.png')
     
-    canvas1 = Canvas(nameWindow, widht = 500, height= 500)
+    canvas1 = Canvas(nameWindow, width = 500, height= 500)
     canvas1.pack(fill='both', expand= True)  
     
     canvas1.create_image(0,0, image= bg, anchor='nw')
