@@ -196,7 +196,7 @@ def placeNumbers():
             
             counter +=1
             
-gameWindow.mainloop()
+##gameWindow.mainloop()
 
 
 def setup():
