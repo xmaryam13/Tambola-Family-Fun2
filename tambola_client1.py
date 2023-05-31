@@ -22,8 +22,7 @@ currentNumberList = []
 flashNumberList = [] 
 flashNumberLabel = None
 
-def receivedMsg():
-    pass
+
     
 def saveName():
     global SERVER
